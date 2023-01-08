@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css" integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    img {
+      display: block;
+    }
+
+    nav {
+      background-color: yellow;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0em 1.5em;
+      place-items: center;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      background: green;
+      box-shadow: 0 0.15em 0.25em rgba(47, 0, 255, 0.705);
+    }
+
+    nav ul li {
+      padding: 0;
+      background: orange;
+    }
+
+    nav > ul > li {
+      background: lightgreen;
+    }
+
+    .dropdown-title {
+      background-color: transparent;
+      border: none;
+      font-family: inherit;
+      width: 100%;
+    }
+
+    nav > ul > li a,
+    .dropdown-title {
+      text-decoration: none;
+      text-align: center;
+      display: inline-block;
+      color: blue;
+      font-size: 1.125rem;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown_menu {
+      position: absolute;
+      opacity: 0.3;
+      visibility: hidden;
+      top: 150px; /* needs to be changed with JS */
+    }
+
+    .dropdown:hover .dropdown_menu,
+    .dropdown:focus-within .dropdown_menu {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .dropdown_menu a,
+    .dropdown-title {
+      display: block;
+      padding: 0.5em;
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Main Navigation">
+    <img src="http://placekitten.com/300/100" alt="Logo">
+    <ul>
+      <li class="dropdown">
+        <!-- aria-expanded needs managed with Javascript -->
+        <!-- button not semantic BUT allows users who nav by voice to easily open menu -->
+        <button
+          type="button"
+          class="dropdown-title"
+          aria-expanded="false"
+          aria-controls="header-dropdown"
+          aria-label="Menu (click or tap to open)"
+        >
+          <span class="fa fa-bars fa-lg"></span>
+        </button>
+        <ul class="dropdown_menu" id="header-dropdown">
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Resume</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Get in touch</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <script src="./js/menu-v2.js"></script>
+</body>
+</html>
