@@ -3,5 +3,5 @@ Based on [CSS-Only Accessible Dropdown Navigation Menu](https://moderncss.dev/cs
 
 ## To-Do List
 - Move CSS into its own file
-- Get JS to work with both mouse and touch
+- Update JS to change menu icon to close icon and vice versa with both mouse and touch
 - Update CSS to a cohesive style
